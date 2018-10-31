@@ -1,0 +1,3 @@
+﻿  Objet3DComposite.cpp
+c:\users\chini\documents\poly\2018aut\log2410\tp4depart-a18\tp4depart\tp4code\objet3dcomposite.cpp(116): warning C4244: 'argument': conversion from 'unsigned __int64' to 'float', possible loss of data
+  PolyIcone3D.vcxproj -> C:\Users\chini\Documents\Poly\2018AUT\LOG2410\TP4Depart-A18\TP4Depart\PolyIcone3D\x64\Debug\PolyIcone3D.exe

@@ -18,9 +18,9 @@ public:
 	virtual ~Sphere();
 	virtual Sphere* clone() const;
 
-	virtual size_t getNbParameters() const;
+	virtual std::size_t getNbParameters() const;
 	virtual PrimitiveParams getParameters() const;
-	virtual void setParameter(size_t pIndex, float pValue);
+	virtual void setParameter(std::size_t pIndex, float pValue);
 
 private:
 	virtual std::ostream& toStream(std::ostream& o) const;

@@ -68,7 +68,7 @@ Point3D TransformedObjet3D::getCenter() const
 }
 
 
-size_t TransformedObjet3D::getNbParameters() const 
+std::size_t TransformedObjet3D::getNbParameters() const 
 {
 	// A Completer...
 	return 0;
@@ -99,7 +99,7 @@ void TransformedObjet3D::setCenter(const Point3D& center){
 }
 
 
-void TransformedObjet3D::setParameter(size_t pIndex, float pValue)
+void TransformedObjet3D::setParameter(std::size_t pIndex, float pValue)
 {
 	// A Completer...
 }

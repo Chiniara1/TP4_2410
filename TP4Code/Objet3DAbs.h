@@ -32,9 +32,9 @@ public:
 	virtual void moveCenter(const Point3D& delta) =0;
 	virtual void setCenter(const Point3D& center) = 0;
 
-	virtual size_t getNbParameters() const = 0;
+	virtual std::size_t getNbParameters() const = 0;
 	virtual PrimitiveParams getParameters() const = 0;
-	virtual void setParameter(size_t pIndex, float pValue) =0;
+	virtual void setParameter(std::size_t pIndex, float pValue) =0;
 
 	friend std::ostream& operator<<(std::ostream& o, const Objet3DAbs& obj3d);
 

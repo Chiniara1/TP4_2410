@@ -30,9 +30,9 @@ public:
 	virtual void moveCenter(const Point3D& delta);
 	virtual void setCenter(const Point3D& center);
 
-	virtual size_t getNbParameters() const;
+	virtual std::size_t getNbParameters() const;
 	virtual PrimitiveParams getParameters() const;
-	virtual void setParameter(size_t pIndex, float pValue);
+	virtual void setParameter(std::size_t pIndex, float pValue);
 
 	virtual float getScale() const;
 	virtual void setScale(float scal);

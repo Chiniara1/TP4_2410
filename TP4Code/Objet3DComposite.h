@@ -30,15 +30,15 @@ public:
 	virtual void moveCenter(const Point3D& delta);
 	virtual void setCenter(const Point3D& center);
 
-	virtual size_t getNbParameters() const;
+	virtual std::size_t getNbParameters() const;
 	virtual PrimitiveParams getParameters() const;
-	virtual void setParameter(size_t pIndex, float pValue);
+	virtual void setParameter(std::size_t pIndex, float pValue);
 
 protected:
 	Point3D computeCenter() const;
 
 	virtual std::ostream& toStream(std::ostream& o) const;
-	static size_t outputIndent;
+	static std::size_t outputIndent;
 
 	Objet3DContainer m_objetContainer;
 };
