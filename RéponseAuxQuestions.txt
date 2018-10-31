@@ -1,0 +1,23 @@
+Patrons composites
+
+1) Identifiez les points suivants :
+a) L’intention du patron Composite.
+
+L'intention du patron composite est de traiter les objets individuels et les objets multiples, composés
+récursivement, de façon uniforme.
+
+b) La structure des classes réelles qui participent au patron ainsi que leurs rôles.
+Faite un diagramme de classes avec Enterprise Architect pour l’instance du
+patron composite. Ajouter des notes en UML pour indiquer les rôles, et
+intégrer votre diagramme sous forme d’image dans votre fichier de réponses.
+
+
+
+2) Identifiez la ou les abstractions présentes dans la conception du TP4, et pour
+chacune, identifiez les responsabilités spécifiques qui lui ont été assignées.
+
+Les abstractions présentes dans la conception du TP4 sont les classes Objet3DAbs, PrimitiveAbs et Objet3DComposite. 
+La classe Objet3DAbs est une classe virtuelle pure et permet d'utiliser le type de primitive 
+voulu grâce à l'héritage. La classe Objet3DComposite hérite de la classe Objet3DAbs et peut aussi 
+être un Objet3DAbs, ce qui permet de faire de la composition récursive et donc d'utiliser le patron composite.
+La classe PrimitiveAbs
