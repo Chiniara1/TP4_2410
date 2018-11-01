@@ -12,7 +12,6 @@ Torus::Torus(const Point3D& pt, float R, float r, float theta, float phi)
 	m_dimensions[1] = r;
 	m_dimensions[2] = theta;
 	m_dimensions[3] = phi;
-	// A Completer...
 }
 
 Torus::~Torus() {
@@ -27,13 +26,11 @@ Torus * Torus::clone() const
 
 std::size_t Torus::getNbParameters() const {
 
-	// A Completer...
 	return 4;
 }
 
 PrimitiveParams Torus::getParameters() const
 {
-	// A Completer...
 	PrimitiveParams params = PrimitiveParams();
 	params.push_back(m_dimensions[0]);
 	params.push_back(m_dimensions[1]);
@@ -49,7 +46,6 @@ void Torus::setParameter(std::size_t pIndex, float pValue) {
 	if (pValue<0.0)
 		throw std::range_error("Invalid dimension value for Torus. Must be larger than 0");
 
-	// A Completer...
 	m_dimensions[pIndex] = pValue;
 }
 

@@ -21,3 +21,62 @@ La classe Objet3DAbs est une classe virtuelle pure (interface) et permet d'utili
 voulu grâce à l'héritage à travers la classe PrimitiveAbs. La classe Objet3DComposite hérite de la classe
 Objet3DAbs et peut aussi être un Objet3DAbs, ce qui permet de faire de la composition récursive et donc 
 d'utiliser le patron composite grâce à ces deux classes.
+
+
+Patron Decorator
+
+1) Identifiez les points suivants :
+a) L’intention du patron Decorator.
+
+
+
+b) La structure des classes réelles qui participent au patron ainsi que leurs rôles.
+Faite un diagramme de classes avec Enterprise Architect pour l’instance du
+patron Decorator. Ajouter des notes en UML pour indiquer les rôles, et
+intégrer votre diagramme sous forme d’image dans votre fichier de réponses.
+
+2) Identifiez les responsabilités des classes primitives qui sont réinterprétées
+lorsque le Decorator est utilisé.
+
+
+
+3) Selon vous, pourquoi dans la conception actuelle, un Decorator s’applique aux
+primitives (classe PrimitiveAbs) et non à tous les objets 3D (Objet3Dabs) ? Seraitil
+possible d’appliquer le Decorator à tous les objets et quelle en serait les
+conséquences ?
+
+
+Conteneurs et Patron Iterator
+
+1) Identifiez les points suivants :
+a) L’intention du patron Iterator.
+
+
+
+b) La classe de conteneur de la STL utilisée pour stocker les enfants dans la
+classe Composite et les classes des Iterators utilisés dans la conception qui
+vous a été fournie.
+
+
+
+2) Expliquez le rôle de l’attribut statique m_emptyContainer défini dans la classe
+PrimitiveAbs. Expliquez pourquoi, selon vous, cet attribut est déclaré comme un
+attribut statique et privé.
+
+
+
+3) Quelles seraient les conséquences sur l’ensemble du code si vous décidiez de
+changer la classe de conteneur utilisée pour stocker les enfants dans la classe
+Composite? On vous demande de faire ce changement et d’indiquer toutes les
+modifications qui doivent être faites à l’ensemble du code suite à ce
+changement. Reliez la liste des changements à effectuer à la notion
+d’encapsulation mise de l’avant par la programmation orientée-objet. À votre
+avis, la conception proposée dans le TP4 respecte-t-elle le principe d’encapsulation ?
+
+
+
+4) Les classes dérivées Objet3DIterator et Objet3DIterator_const surchargent les
+opérateur « * » et « -> ». Cette décision de conception a des avantages et des
+inconvénients. Identifiez un avantage et un inconvénient de cette décision.
+
+

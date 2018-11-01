@@ -28,57 +28,49 @@ void TransformedObjet3D::addChild(const Objet3DAbs& obj3d){
 
 Objet3DIterator TransformedObjet3D::begin()
 {
-	// A Completer...
-	return Objet3DBaseIterator();
+	return m_objet3d.get()->begin();
 }
 
 
 Objet3DIterator_const TransformedObjet3D::cbegin() const {
 
-	// A Completer...
-	return Objet3DBaseIterator();
+	return m_objet3d.get()->cbegin();
 }
 
 
 Objet3DIterator_const TransformedObjet3D::cend() const {
 
-	// A Completer...
-	return Objet3DBaseIterator();
+	return m_objet3d.get()->cend();
 }
 
 
 Objet3DAbs* TransformedObjet3D::clone() const 
 {
-	// A Completer...
-	return nullptr;
+	return m_objet3d.get()->clone();
 }
 
 
 Objet3DIterator TransformedObjet3D::end()
 {
-	// A Completer...
-	return Objet3DBaseIterator();
+	return m_objet3d.get()->end();
 }
 
 
 Point3D TransformedObjet3D::getCenter() const 
 {
-	// A Completer...
-	return Point3D();
+	return m_objet3d.get()->getCenter();
 }
 
 
 std::size_t TransformedObjet3D::getNbParameters() const 
 {
-	// A Completer...
-	return 0;
+	return m_objet3d.get()->getNbParameters();
 }
 
 
 PrimitiveParams TransformedObjet3D::getParameters() const 
 {
-	// A Completer...
-	return PrimitiveParams();
+	return m_objet3d.get()->getParameters();
 }
 
 
@@ -101,29 +93,27 @@ void TransformedObjet3D::setCenter(const Point3D& center){
 
 void TransformedObjet3D::setParameter(std::size_t pIndex, float pValue)
 {
-	// A Completer...
+	m_objet3d.get()->setParameter(pIndex, pValue);
 }
 
 float TransformedObjet3D::getScale() const
 {
-	// A Completer...
-	return 0.;
+	return m_scale;
 }
 
 void TransformedObjet3D::setScale(float scal)
 {
-	// A Completer...
+	m_scale = scal;
 }
 
 Point3D TransformedObjet3D::getTranslation() const
 {
-	// A Completer...
-	return Point3D();
+	return m_translation;
 }
 
 void TransformedObjet3D::setTranslation(const Point3D & translat)
 {
-	// A Completer...
+	m_translation = translat;
 }
 
 

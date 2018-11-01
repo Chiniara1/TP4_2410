@@ -14,7 +14,6 @@ Objet3DComposite::Objet3DComposite(){
 
 Objet3DComposite::Objet3DComposite(const Objet3DComposite & mdd)
 {
-	// A Completer...
 	for (int i = 0; i < mdd.m_objetContainer.size(); i++) {
 		addChild(*mdd.m_objetContainer[i]);
 	}
@@ -30,7 +29,6 @@ Objet3DComposite * Objet3DComposite::clone() const
 
 void Objet3DComposite::addChild(const Objet3DAbs& obj3d)
 {
-	// A Completer...
 	Objet3DAbs* ptr = obj3d.clone();
 	m_objetContainer.push_back((Objet3DPtr)ptr);
 
@@ -40,31 +38,26 @@ void Objet3DComposite::addChild(const Objet3DAbs& obj3d)
 
 Objet3DIterator Objet3DComposite::begin(){
 
-	// A Completer...
 	return m_objetContainer.begin();
 }
 
 Objet3DIterator_const Objet3DComposite::cbegin() const {
 
-	// A Completer...
 	return m_objetContainer.cbegin();
 }
 
 Objet3DIterator_const Objet3DComposite::cend() const {
 
-	// A Completer...
 	return m_objetContainer.cend();
 }
 
 Objet3DIterator Objet3DComposite::end(){
 
-	// A Completer...
 	return m_objetContainer.end();
 }
 
 Point3D Objet3DComposite::getCenter() const {
 	
-	// A Completer...
 	return computeCenter();
 }
 
@@ -80,20 +73,18 @@ PrimitiveParams Objet3DComposite::getParameters() const {
 
 void Objet3DComposite::removeChild(Objet3DIterator_const obj3dIt)
 {
-	// A Completer...
 	m_objetContainer.erase(obj3dIt);
 }
 
 void Objet3DComposite::moveCenter(const Point3D & delta)
 {
-	// A Completer...
 	for (int i = 0; i < m_objetContainer.size(); i++) {
 		m_objetContainer[i]->moveCenter(delta);
 	}
 }
 
 void Objet3DComposite::setCenter(const Point3D& center){
-	// A Completer...
+
 	Point3D oldCenter = getCenter();
 	Point3D delta =  center - oldCenter;
 	moveCenter(delta);
@@ -111,8 +102,6 @@ Point3D Objet3DComposite::computeCenter() const
 	for (int i = 0; i < m_objetContainer.size(); i++) {
 		moyenne += m_objetContainer[i]->getCenter();
 	}
-
-	// A Completer...
 	moyenne /= m_objetContainer.size();
 	return moyenne;
 }

@@ -15,7 +15,6 @@ PrimitiveAbs::PrimitiveAbs(){
 }
 
 PrimitiveAbs::PrimitiveAbs(const Point3D& c)
-	// A Completer...
 {
 	m_center = c;
 	m_emptyContainer = Objet3DContainer();
@@ -31,25 +30,21 @@ void PrimitiveAbs::addChild(const Objet3DAbs& obj3d){
 
 Objet3DIterator PrimitiveAbs::begin(){
 
-	// A Completer...
 	return m_emptyContainer.begin();
 }
 
 Objet3DIterator_const PrimitiveAbs::cbegin() const {
 
-	// A Completer...
 	return m_emptyContainer.cbegin();
 }
 
 Objet3DIterator_const PrimitiveAbs::cend() const {
 
-	// A Completer...
 	return m_emptyContainer.cend();
 }
 
 Objet3DIterator PrimitiveAbs::end(){
 
-	// A Completer...
 	return m_emptyContainer.end();
 }
 
@@ -59,19 +54,16 @@ void PrimitiveAbs::removeChild(Objet3DIterator_const obj3dIt){
 
 Point3D PrimitiveAbs::getCenter() const {
 
-	// A Completer...
 	return m_center;
 }
 
 void PrimitiveAbs::moveCenter(const Point3D & delta)
 {
-	// A Completer...
 	m_center += delta;
 }
 
 void PrimitiveAbs::setCenter(const Point3D& center)
 {
-	// A Completer...
 	m_center = center;
 }
 
