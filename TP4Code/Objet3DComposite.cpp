@@ -24,7 +24,7 @@ Objet3DComposite::~Objet3DComposite(){
 
 Objet3DComposite * Objet3DComposite::clone() const
 {
-	return nullptr;
+	return new Objet3DComposite(*this);
 }
 
 void Objet3DComposite::addChild(const Objet3DAbs& obj3d)

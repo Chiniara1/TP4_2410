@@ -23,6 +23,7 @@ TransformedObjet3D::~TransformedObjet3D(){
 
 void TransformedObjet3D::addChild(const Objet3DAbs& obj3d){
 	// Deleguer a l'objet decore la tache d'ajouter un enfant
+	m_objet3d.get()->addChild(obj3d);
 }
 
 
@@ -70,24 +71,29 @@ std::size_t TransformedObjet3D::getNbParameters() const
 
 PrimitiveParams TransformedObjet3D::getParameters() const 
 {
-	return m_objet3d.get()->getParameters();
+	PrimitiveParams newParams = m_objet3d.get()->getParameters();
+	for (int i = 0; i < newParams.size(); i++) {
+		newParams[i] *= m_scale;
+	}
+	return newParams;
 }
 
 
 void TransformedObjet3D::moveCenter(const Point3D& delta){
-	// A Completer...
+	m_objet3d.get()->moveCenter(delta);
 }
 
 
 void TransformedObjet3D::removeChild(Objet3DIterator_const obj3dIt)
 {
 	// Deleguer a l'objet decore la tache d'eliminer un enfant
-	// A Completer...
+	m_objet3d.get()->removeChild(obj3dIt);
 }
 
 
 void TransformedObjet3D::setCenter(const Point3D& center){
-	// A Completer...
+
+	m_objet3d.get()->setCenter(center);
 }
 
 
