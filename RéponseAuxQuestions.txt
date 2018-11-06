@@ -28,12 +28,16 @@ Patron Decorator
 1) Identifiez les points suivants :
 a) L’intention du patron Decorator.
 
-
+L'intention du patron Decorator est d'attacher dynamiquement des responsabilités 
+additionnelles à un objet en fournissant une alternative flexible à la dérivation 
+pour étendre la fonctionnalité d’une classe.
 
 b) La structure des classes réelles qui participent au patron ainsi que leurs rôles.
 Faite un diagramme de classes avec Enterprise Architect pour l’instance du
 patron Decorator. Ajouter des notes en UML pour indiquer les rôles, et
 intégrer votre diagramme sous forme d’image dans votre fichier de réponses.
+
+
 
 2) Identifiez les responsabilités des classes primitives qui sont réinterprétées
 lorsque le Decorator est utilisé.
@@ -46,12 +50,16 @@ possible d’appliquer le Decorator à tous les objets et quelle en serait les
 conséquences ?
 
 
+
+
 Conteneurs et Patron Iterator
 
 1) Identifiez les points suivants :
 a) L’intention du patron Iterator.
 
-
+L'intetion du patron Iterator est de fournir une méthode d’accès séquentielle 
+aux éléments d’un conteneur comme une liste ou un vecteur sans exposer sa structure
+interne.
 
 b) La classe de conteneur de la STL utilisée pour stocker les enfants dans la
 classe Composite et les classes des Iterators utilisés dans la conception qui
@@ -78,5 +86,4 @@ avis, la conception proposée dans le TP4 respecte-t-elle le principe d’encapsula
 4) Les classes dérivées Objet3DIterator et Objet3DIterator_const surchargent les
 opérateur « * » et « -> ». Cette décision de conception a des avantages et des
 inconvénients. Identifiez un avantage et un inconvénient de cette décision.
-
 
