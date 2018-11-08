@@ -58,8 +58,10 @@ Point3D operator-(const Point3D & p1, const Point3D & p2)
 
 bool operator==(const Point3D & p1, const Point3D & p2)
 {
-	const float small_eps = 1e-6;
-	return ((p1.x() - p2.x()) < small_eps && (p1.y() - p2.y()) < small_eps && (p1.z() - p2.z()) < small_eps);
+	const double small_eps_sqr = 1e-12;
+	return ((p1.x() - p2.x())*(p1.x() - p2.x()) < small_eps_sqr 
+		&& (p1.y() - p2.y())*(p1.y() - p2.y()) < small_eps_sqr 
+		&& (p1.z() - p2.z())*(p1.z() - p2.z()) < small_eps_sqr);
 }
 
 bool operator!=(const Point3D & p1, const Point3D & p2)

@@ -42,14 +42,21 @@ intégrer votre diagramme sous forme d’image dans votre fichier de réponses.
 2) Identifiez les responsabilités des classes primitives qui sont réinterprétées
 lorsque le Decorator est utilisé.
 
-
+Les responsabilités des classes primitives ne changent pas. La classe TransformedObjt3D
+qui applique le patron Decorator sur la classe PrimitiveAbs permet justement d'ajouter des
+responsabilités aux objets de la classe PrimitiveAbs qui peuvent ensuite être enlevées.
+Ces responsabilités ajoutées sont la translation et l'agrandissement de la primitive.
 
 3) Selon vous, pourquoi dans la conception actuelle, un Decorator s’applique aux
-primitives (classe PrimitiveAbs) et non à tous les objets 3D (Objet3Dabs) ? Seraitil
+primitives (classe PrimitiveAbs) et non à tous les objets 3D (Objet3Dabs) ? Serait-il
 possible d’appliquer le Decorator à tous les objets et quelle en serait les
 conséquences ?
 
-
+Parce que la classe Objet3DAbs est une classe virtuelle pure (interface) alors que la 
+classe PrimitiveAbs ne l'est pas en plus qu'elle accède plus directement aux différentes 
+primitives au niveau de l'héritage. Il serait possible d'appliquer le Decorator à tous 
+les objets 3D (Objet3DAbs), mais cela aurait comme conséquence de réduire la flexibilité
+qu'apporte le patron Decorator en remplaçant l'héritage statique.
 
 
 Conteneurs et Patron Iterator
@@ -65,7 +72,8 @@ b) La classe de conteneur de la STL utilisée pour stocker les enfants dans la
 classe Composite et les classes des Iterators utilisés dans la conception qui
 vous a été fournie.
 
-
+La classe du conteneur est Objet3DContainer qui est en fait un vecteur de unique_ptr 
+et les classes des Iterators sont Objet3DBaseIterator et Objet3DBaseIterator_const.
 
 2) Expliquez le rôle de l’attribut statique m_emptyContainer défini dans la classe
 PrimitiveAbs. Expliquez pourquoi, selon vous, cet attribut est déclaré comme un

@@ -59,7 +59,7 @@ Objet3DIterator TransformedObjet3D::end()
 
 Point3D TransformedObjet3D::getCenter() const 
 {
-	return m_objet3d.get()->getCenter();
+	return m_objet3d.get()->getCenter() + m_translation;
 }
 
 
