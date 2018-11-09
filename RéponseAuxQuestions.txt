@@ -79,7 +79,10 @@ et les classes des Iterators sont Objet3DBaseIterator et Objet3DBaseIterator_con
 PrimitiveAbs. Expliquez pourquoi, selon vous, cet attribut est déclaré comme un
 attribut statique et privé.
 
-
+Le rôle de l'attribut statique m_emptyContainer est de permettre à un objet de la
+classe PrimitiveAbs de pouvoir y stocker les différents solides qui le compose.
+Cet attribut est statique et privé, car on veut que cet attribut appartienne 
+uniquement à la classe PrimitiveAbs, donc pas aux classes des différents solides.
 
 3) Quelles seraient les conséquences sur l’ensemble du code si vous décidiez de
 changer la classe de conteneur utilisée pour stocker les enfants dans la classe
@@ -87,7 +90,7 @@ Composite? On vous demande de faire ce changement et d’indiquer toutes les
 modifications qui doivent être faites à l’ensemble du code suite à ce
 changement. Reliez la liste des changements à effectuer à la notion
 d’encapsulation mise de l’avant par la programmation orientée-objet. À votre
-avis, la conception proposée dans le TP4 respecte-t-elle le principe d’encapsulation ?
+avis, la conception proposée dans le TP4 respecte-t-elle le principe d’encapsulation?
 
 
 
@@ -95,3 +98,7 @@ avis, la conception proposée dans le TP4 respecte-t-elle le principe d’encapsula
 opérateur « * » et « -> ». Cette décision de conception a des avantages et des
 inconvénients. Identifiez un avantage et un inconvénient de cette décision.
 
+L'avantage de la surcharge de ces opérateurs est l'accès à l'objet 3D sur lequel
+pointe l'itérateur est simplifié.
+Le désavantage de la surcharge de ces opérateurs est que leur utilisation 
+devient ainsi moins flexible ue s'ils ne seraient pas surchargés.
