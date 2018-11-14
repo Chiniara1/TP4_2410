@@ -23,6 +23,6 @@ public:
 
 private:
 	Objet3DComposite m_icone3D;
-	TransformedObjet3D m_cylTransformed;
+	TransformedObjet3D m_trsTransformed;
 };
 #endif // !defined(EA_123781D1_39B6_4d76_9F2B_B04DFBF2D76A__INCLUDED_)

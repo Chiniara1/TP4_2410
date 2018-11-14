@@ -1,5 +1,5 @@
-#if !defined(EA_8099F38C_C8A3_47d0_948F_F38A0B83FFB2__INCLUDED_)
-#define EA_8099F38C_C8A3_47d0_948F_F38A0B83FFB2__INCLUDED_
+#if !defined(EA_8099F38C_C8A3_47d0_948F_c38A0B83FFB2__INCLUDED_)
+#define EA_8099F38C_C8A3_47d0_948F_c38A0B83FFB2__INCLUDED_
 
 #include "PrimitiveAbs.h"
 
@@ -7,7 +7,7 @@ class Torus : public PrimitiveAbs
 {
 
 public:
-	Torus(const Point3D& pt, float R, float r, float theta, float phi);
+	Torus(const Point3D& pt, float R, float r);
 	virtual ~Torus();
 	virtual Torus* clone() const;
 
@@ -20,4 +20,4 @@ private:
 
 	float m_dimensions[4];
 };
-#endif // !defined(EA_8099F38C_C8A3_47d0_948F_F38A0B83FFB2__INCLUDED_)
+#endif // !defined(EA_8099F38C_C8A3_47d0_948F_c38A0B83FFB2__INCLUDED_)

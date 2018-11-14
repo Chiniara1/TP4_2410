@@ -9,28 +9,29 @@
 #include "Cube.h"
 #include "Cylinder.h"
 #include "Sphere.h"
+#include "Torus.h"
 
 
 TP4_Test::TP4_Test()
-	: m_icone3D(), m_cylTransformed(Cylinder(Point3D(2.5f,1.5f,0.),2,5),Point3D(0.5f,0.5f,0.5f),3)
+	: m_icone3D(), m_trsTransformed(Torus(Point3D(2.5f,1.5f,0.),2,5),Point3D(0.5f,0.5f,0.5f),3)
 {
 	Cube     cub1(Point3D(1., 2., 3.), 2., 2., 2.);
 	Cube     cub2(Point3D(-1., 2., 4.), 2.5f, 2.1f, 4.);
-	Cylinder cyl1(Point3D(3., -1., 1.), 1., 2.);
-	Cylinder cyl2(Point3D(2., 1., 2.), 1., 2.);
+	Torus	 trs1(Point3D(3., -1., 1.), 1., 2.);
+	Torus	 trs2(Point3D(2., 1., 2.), 1., 2.);
 	Sphere   sph1(Point3D(2., 2., 2.), 2.);
 	Sphere   sph2(Point3D(3., -1., 1.), 3.5);
 
 	Objet3DComposite compos1;
 	compos1.addChild(cub1);
-	compos1.addChild(cyl1);
+	compos1.addChild(trs1);
 	compos1.addChild(sph1);
 
 	Objet3DComposite compos2;
 	compos2.addChild(sph1);
 	compos2.addChild(compos1);
 	compos2.addChild(cub1);
-	compos2.addChild(cyl2);
+	compos2.addChild(trs2);
 
 	m_icone3D.addChild(cub2);
 	m_icone3D.addChild(compos2);
@@ -90,8 +91,8 @@ TP4_Test::RESULTAT TP4_Test::testComposite()
 	std::cout << "===== testComposite TEST 5 SUCCES" << std::endl;
 
 	++itCompos2; ++itCompos2;  ++itCompos2;
-	PrimitiveParams paramsCyl2 = itCompos2->getParameters();
-	if (paramsCyl2.size() != 2)
+	PrimitiveParams paramstrs2 = itCompos2->getParameters();
+	if (paramstrs2.size() != 2)
 	{
 		std::cout << "===== testComposite TEST 6 ECHEC" << std::endl;
 		return ECHEC;
@@ -107,7 +108,7 @@ TP4_Test::RESULTAT TP4_Test::testComposite()
 TP4_Test::RESULTAT TP4_Test::testDecorator()
 {
 	Point3D resultatTransform1(3., 2., 0.5f);
-	Point3D centreTransform = m_cylTransformed.getCenter();
+	Point3D centreTransform = m_trsTransformed.getCenter();
 
 	if (centreTransform != resultatTransform1)
 	{
@@ -117,8 +118,8 @@ TP4_Test::RESULTAT TP4_Test::testDecorator()
 
 	std::cout << "===== testDecorator TEST 1 SUCCES" << std::endl;
 
-	PrimitiveParams paramsCylTransformed = m_cylTransformed.getParameters();
-	if(paramsCylTransformed[0] != 6.)
+	PrimitiveParams paramsTrsTransformed = m_trsTransformed.getParameters();
+	if(paramsTrsTransformed[0] != 6.)
 	{
 		std::cout << "===== testDecorator TEST 2 ECHEC" << std::endl;
 		return ECHEC;
@@ -126,7 +127,7 @@ TP4_Test::RESULTAT TP4_Test::testDecorator()
 
 	std::cout << "===== testDecorator TEST 2 SUCCES" << std::endl;
 
-	if (paramsCylTransformed[1] != 15.)
+	if (paramsTrsTransformed[1] != 15.)
 	{
 		std::cout << "===== testDecorator TEST 3 ECHEC" << std::endl;
 		return ECHEC;
@@ -134,9 +135,9 @@ TP4_Test::RESULTAT TP4_Test::testDecorator()
 
 	std::cout << "===== testDecorator TEST 3 SUCCES" << std::endl;
 
-	m_cylTransformed.setScale(2.);
-	paramsCylTransformed = m_cylTransformed.getParameters();
-	if (paramsCylTransformed[0] != 4.)
+	m_trsTransformed.setScale(2.);
+	paramsTrsTransformed = m_trsTransformed.getParameters();
+	if (paramsTrsTransformed[0] != 4.)
 	{
 		std::cout << "===== testDecorator TEST 4 ECHEC" << std::endl;
 		return ECHEC;
@@ -144,7 +145,7 @@ TP4_Test::RESULTAT TP4_Test::testDecorator()
 
 	std::cout << "===== testDecorator TEST 4 SUCCES" << std::endl;
 
-	if (paramsCylTransformed[1] != 10.)
+	if (paramsTrsTransformed[1] != 10.)
 	{
 		std::cout << "===== testDecorator TEST 5 ECHEC" << std::endl;
 		return ECHEC;
@@ -152,16 +153,16 @@ TP4_Test::RESULTAT TP4_Test::testDecorator()
 
 	std::cout << "===== testDecorator TEST 5 SUCCES" << std::endl;
 
-	m_cylTransformed.setTranslation(Point3D(1., 1., 1.));
+	m_trsTransformed.setTranslation(Point3D(1., 1., 1.));
 	Point3D resultatTransform2(3.5f, 2.5f, 1.);
 
-	if (m_cylTransformed.getCenter() != resultatTransform2)
+	if (m_trsTransformed.getCenter() != resultatTransform2)
 	{
 		std::cerr << "===== testDecorator TEST 6 ECHEC" << std::endl;
 		return ECHEC;
 	}
 
 	std::cout << "===== testDecorator TEST 6 SUCCES" << std::endl;
-	std::cout << m_cylTransformed << std::endl;
+	std::cout << m_trsTransformed << std::endl;
 	return SUCCES;
 }

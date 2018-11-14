@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cube">
+    <Position X="2" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAEAAAEgAAAAAACBAAAAEAAABAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Cube.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cylinder">
+    <Position X="7.5" Y="10.5" Width="2" />
+    <InheritanceLine Type="PrimitiveAbs" ManuallyRouted="true">
+      <Path>
+        <Point X="7" Y="9.3" />
+        <Point X="7" Y="10.12" />
+        <Point X="8.5" Y="10.12" />
+        <Point X="8.5" Y="10.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAEAAAEgAAAAAACAAAQAEAAABAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Cylinder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Objet3DAbs">
+    <Position X="6" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAABABBEAAAExAAACACSAAAAAEgAAAAI=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Objet3DAbs.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Objet3DComposite">
+    <Position X="0.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAACACAAAABARBEAAAGwAAACACCAAAAAEgABAAI=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Objet3DComposite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Objet3DIterator">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAACA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Objet3DContainer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Objet3DIterator_const">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Objet3DContainer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Point3D">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAQAAEABAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Point3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimitiveAbs">
+    <Position X="6" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAACAAAAAABEBBAAAAAQAEECACAAAAAAAgAAAAI=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\PrimitiveAbs.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sphere">
+    <Position X="4.75" Y="10.5" Width="2" />
+    <InheritanceLine Type="PrimitiveAbs" ManuallyRouted="true">
+      <Path>
+        <Point X="7" Y="9.3" />
+        <Point X="7" Y="10.12" />
+        <Point X="5.75" Y="10.12" />
+        <Point X="5.75" Y="10.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAUAAAEgAAAAAACAAAAAEAAIAAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Sphere.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Torus">
+    <Position X="10.25" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAEgAAAAAACgAAAAkAAABAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\Torus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP4_Test">
+    <Position X="16" Y="3" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="TP4_Test::RESULTAT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\TP4_Test.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAABAAAQAAAAAAAEAQAACAAAAAA=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\TP4_Test.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransformedObjet3D">
+    <Position X="11.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEBCAAAAAKBABBEAAAEwAAAiICCCAAAAEgACACI=</HashCode>
+      <FileName>C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\TP4Code\TransformedObjet3D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

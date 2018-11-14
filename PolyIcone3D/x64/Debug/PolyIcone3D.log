@@ -1,14 +1,4 @@
-﻿  TransformedObjet3D.cpp
+﻿  PolyIcone3D.cpp
   TP4_Test.cpp
   Generating Code...
-  Compiling...
-  Torus.cpp
-  Sphere.cpp
-  PrimitiveAbs.cpp
-  PolyIcone3D.cpp
-  Objet3DComposite.cpp
-c:\users\nicolas\desktop\travaux_poly\log2410\repository git\tp4_2410\tp4code\objet3dcomposite.cpp(105): warning C4244: 'argument': conversion from 'unsigned __int64' to 'float', possible loss of data
-  Cylinder.cpp
-  Cube.cpp
-  Generating Code...
-  PolyIcone3D.vcxproj -> C:\Users\Nicolas\Desktop\travaux_poly\Log2410\repository git\TP4_2410\PolyIcone3D\x64\Debug\PolyIcone3D.exe
+  PolyIcone3D.vcxproj -> C:\Users\chini\Desktop\TP4_2410-master (1)\TP4_2410-master\PolyIcone3D\x64\Debug\PolyIcone3D.exe
