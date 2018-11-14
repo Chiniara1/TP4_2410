@@ -92,7 +92,16 @@ changement. Reliez la liste des changements à effectuer à la notion
 d’encapsulation mise de l’avant par la programmation orientée-objet. À votre
 avis, la conception proposée dans le TP4 respecte-t-elle le principe d’encapsulation?
 
-
+Si le nouveau conteneur utilisé est un conteneur permettant d'accéder à ses éléments
+grâce aux [] comme un deque, les seules modifications à faire sont de changer les
+déclarations du conteneur dans la classe Objet3DContainer. Sinon, si par exemple le 
+nouveau conteneur est une list, il faut changer les appels aux éléments de list 
+dans les tests puisqu'il n'est pas possible d'utiliser les [] pour aller chercher
+un élément de list. Dans mon cas, j'ai simplement changé les appels de vector par 
+des appels de deque. La conception proposée dans le TP4 repecte le principe 
+d'encapsulation, car le conteneur est uniquement utilisable par la classe 
+Objet3DContainer et que les attributs de type Objet3DContainer utilisés dans les
+autres classes sont protected.
 
 4) Les classes dérivées Objet3DIterator et Objet3DIterator_const surchargent les
 opérateur « * » et « -> ». Cette décision de conception a des avantages et des

@@ -9,12 +9,12 @@
 #define EA_1A8475D5_4734_484c_8758_A92F295DDED0__INCLUDED_
 
 #include <vector>
-#include <list>
+#include <deque>
 #include <memory>
 
 // Configuration du stockage des enfants des objets composites
 using Objet3DPtr = std::unique_ptr<class Objet3DAbs>;
-using Objet3DContainer = std::vector<Objet3DPtr>;
+using Objet3DContainer = std::deque<Objet3DPtr>;
 using Objet3DBaseIterator = Objet3DContainer::iterator;
 using Objet3DBaseIterator_const = Objet3DContainer::const_iterator;
 
@@ -45,6 +45,6 @@ public:
 };
 
 // Configuration d'un format d'externalisation des parametres des primitives
-using PrimitiveParams = std::vector<float>;
+using PrimitiveParams = std::deque<float>;
 
 #endif // !defined(EA_1A8475D5_4734_484c_8758_A92F295DDED0__INCLUDED_)
