@@ -20,6 +20,7 @@ SelectPrimitiveCmd::~SelectPrimitiveCmd()
 void SelectPrimitiveCmd::cancel()
 {
 	// A COMPLETER: Vider le conteneur local a la commande d'objets selectionnes
+	m_selectObjContainer.clear();
 }
 
 
@@ -29,6 +30,9 @@ void SelectPrimitiveCmd::execute()
 	//		- Construire un visiteur de selection
 	//		- Appliquer le visiteur a l'objet 3d
 	//		- Recuperer les objets selectionnes dans le conteneur local de la commande
+	VisitorPrimitiveSelector visiteur = VisitorPrimitiveSelector(m_type);
+	m_obj3d.accept(visiteur);
+	visiteur.getSelectObjects(m_selectObjContainer);
 }
 
 void SelectPrimitiveCmd::getSelectObjects(Obj3DIteratorContainer & objContainer)
@@ -36,4 +40,7 @@ void SelectPrimitiveCmd::getSelectObjects(Obj3DIteratorContainer & objContainer)
 	// A COMPLETER:
 	// Transferer les objets selectionnes du conteneur local a la commande
 	// vers le conteneur fourni en argument
+	for (auto it = m_selectObjContainer.begin(); it != m_selectObjContainer.end(); it++) {
+		objContainer.push_back(*it);
+	}
 }

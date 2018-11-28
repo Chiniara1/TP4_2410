@@ -19,7 +19,7 @@ XMLPrintCmd::XMLPrintCmd(const Object3DAbs & obj3d)
 void XMLPrintCmd::cancel()
 {
 	// RIEN A FAIRE. La ligne suivante peut etre activee pour generer un message de debug
-	// std::cerr << "XMLPrintCmd::cancel(): rien a annuler pour la commande XMLPrintCmd" << std::endl;
+	std::cerr << "XMLPrintCmd::cancel(): rien a annuler pour la commande XMLPrintCmd" << std::endl;
 }
 
 
@@ -28,4 +28,6 @@ void XMLPrintCmd::execute()
 	// A COMPLETER
 	//		- Construire un visiteur d'ecriture en XML
 	//		- Appliquer le visiteur sur l'objet
+	VisitorXMLWriter writer = VisitorXMLWriter(std::cout);
+	m_obj3d.accept(writer);
 }

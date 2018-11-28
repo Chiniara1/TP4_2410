@@ -29,6 +29,9 @@ void VisitorPrimitiveSelector::visitCube(class Cube& cub)
 	// Verifier que la pile d'objets courants n'est pas vide
 	// Verifier que le type de la primitive est bien celui recherchee
 	// Si oui, ajouter la primitive dans les objets selectionnes
+	if (m_currentObjStack.size() != 0 && m_type == PRIMITIVE_TYPE::Cube_t) {
+		m_selectObjContainer.push_back(m_currentObjStack.back());
+	}	
 }
 
 void VisitorPrimitiveSelector::visitCylinder(class Cylinder& cyl)
@@ -37,6 +40,9 @@ void VisitorPrimitiveSelector::visitCylinder(class Cylinder& cyl)
 	// Verifier que la pile d'objets courants n'est pas vide
 	// Verifier que le type de la primitive est bien celui recherchee
 	// Si oui, ajouter la primitive dans les objets selectionnes
+	if (m_currentObjStack.size() != 0 && m_type == PRIMITIVE_TYPE::Cylinder_t) {
+		m_selectObjContainer.push_back(m_currentObjStack.back());
+	}
 }
 
 void VisitorPrimitiveSelector::visitObjComposite(const Object3DComposite& comp)
@@ -51,6 +57,11 @@ void VisitorPrimitiveSelector::visitObjComposite(class Object3DComposite& comp)
 	//		- Stocker l'enfant sur la pile des objets courants
 	//		- Traiter l'enfant
 	//		- Retirer l'enfant de sur la pile
+	for (Object3DIterator it = comp.begin(); it != comp.end(); it++) {
+		m_currentObjStack.push_back(it);
+		it->accept(*this);
+		m_currentObjStack.pop_back();
+	}
 }
 
 void VisitorPrimitiveSelector::visitPrimitive(const class PrimitiveAbs& prim)
@@ -61,6 +72,7 @@ void VisitorPrimitiveSelector::visitPrimitive(const class PrimitiveAbs& prim)
 void VisitorPrimitiveSelector::visitPrimitive(class PrimitiveAbs& prim)
 {
 	// Type de primitive inconnue... cette primitive n'est pas selectionnee
+	throw(std::invalid_argument("VisitorPrimitiveSelector cannot process unselected Objects"));
 }
 
 void VisitorPrimitiveSelector::visitSphere(class Sphere& sph)
@@ -69,12 +81,16 @@ void VisitorPrimitiveSelector::visitSphere(class Sphere& sph)
 	// Verifier que la pile d'objets courants n'est pas vide
 	// Verifier que le type de la primitive est bien celui recherchee
 	// Si oui, ajouter la primitive dans les objets selectionnes
+	if (m_currentObjStack.size() != 0 && m_type == PRIMITIVE_TYPE::Sphere_t) {
+		m_selectObjContainer.push_back(m_currentObjStack.back());
+	}
 }
 
 void VisitorPrimitiveSelector::visitTransformedObj(class TransformedObject3D& tobj)
 {
 	// A COMPLETER:
 	// Deleguer le traitement a la primitive contenue dans le decorateur 
+	tobj.accept(*this);
 }
 
 void VisitorPrimitiveSelector::getSelectObjects(Obj3DIteratorContainer & objContainer)
@@ -82,4 +98,7 @@ void VisitorPrimitiveSelector::getSelectObjects(Obj3DIteratorContainer & objCont
 	// A COMPLETER:
 	// Transferer les objets selectionnes du conteneur local au visiteur
 	// vers le conteneur fourni en argument
+	for (auto it = m_selectObjContainer.begin(); it != m_selectObjContainer.end(); it++) {
+		objContainer.push_back(*it);
+	}
 }
